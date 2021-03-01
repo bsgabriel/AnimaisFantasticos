@@ -34,4 +34,3 @@ export default function initAnimaNumeros()
   
   observer.observe(observeTarget, {attributes: true}); 
 }
-
