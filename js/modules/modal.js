@@ -1,38 +1,61 @@
-export default function initModal()
+export default class initModal
 {
-  const btnAbrir = document.querySelector('[data-modal="abrir"]');
-  const btnFechar = document.querySelector('[data-modal="fechar"]');
-  const containerModal = document.querySelector('[data-modal="container"]');
-  
-  function toggleModal(event)
+  constructor(btnAbrir, btnFechar, containerModal)
+  {
+    this.btnAbrir = document.querySelector(btnAbrir);
+    this.btnFechar = document.querySelector(btnFechar);
+    this.containerModal = document.querySelector(containerModal);
+
+    this.eventToggleModal = this.eventToggleModal.bind(this);
+    this.cliqueForaModal = this.cliqueForaModal.bind(this);
+    this.cliqueESC = this.cliqueESC.bind(this);
+  }
+
+  toggleModal()
+  {
+    this.containerModal.classList.toggle('ativo');
+  }
+
+  eventToggleModal(event)
   {
     event.preventDefault();
-    containerModal.classList.toggle('ativo');
+    this.toggleModal();
+
   }
 
   // Fecha a caixa de login ao clicar fora dela
-  function cliqueForaModal(event)
+  cliqueForaModal(event)
   {
-    if(event.target === this)
+    if(event.target === this.containerModal)
     {
-      toggleModal(event);
+      this.toggleModal();
     }
   }
 
   // Fecha a caixa de login ao pressionar ESC
-  function cliqueESC(event)
+  cliqueESC(event)
   {
-    if(event.key === 'Escape' && containerModal.classList.contains('ativo'))
+    if(event.key === 'Escape' && this.containerModal.classList.contains('ativo'))
     {
-      toggleModal(event);        
+      this.toggleModal();        
     }
   }
 
-  if(btnAbrir && btnFechar && containerModal)
-  {  
-    btnAbrir.addEventListener('click', toggleModal);
-    btnFechar.addEventListener('click', toggleModal);
-    containerModal.addEventListener('click', cliqueForaModal);
-    window.addEventListener('keydown', cliqueESC);
+  addModalEvents()
+  {
+    this.btnAbrir.addEventListener('click', this.eventToggleModal);
+    this.btnFechar.addEventListener('click', this.eventToggleModal);
+    this.containerModal.addEventListener('click', this.cliqueForaModal);
+    window.addEventListener('keydown', this.cliqueESC);
   }
+
+  init()
+  {
+    if (this.btnAbrir && this.btnFechar && this.containerModal)
+    {
+      this.addModalEvents();
+    }
+    return this;
+  }
+
 }
