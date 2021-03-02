@@ -1,4 +1,4 @@
-import initAnimaNumeros from './animaNumeros.js';
+import AnimaNumeros from './animaNumeros.js';
 
 export default function initFetchAnimais()
 {
@@ -28,8 +28,9 @@ export default function initFetchAnimais()
     
       observacao.innerText = 'Os números não são dados reais.';
       numerosGrid.appendChild(observacao); 
-    
-      initAnimaNumeros();
+      
+      const animaNumeros = new AnimaNumeros('[data-numero]','.numeros', 'ativo');
+      animaNumeros.init();
     } 
     catch(erro) 
     {
