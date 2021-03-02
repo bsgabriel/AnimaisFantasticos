@@ -1,5 +1,5 @@
 // Função que mostra a descrição dos animais de acordo com a imagem selecionada
-export default class initTabNav
+export default class TabNav
 {
   constructor(menu, content)
   {
