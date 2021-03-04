@@ -4,7 +4,7 @@ import TabNav from './modules/tabNav.js';
 import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
 import initMenuMobile from './modules/menuMobile.js';
-import initFetchAnimais from './modules/fetchAnimais.js';
+import fetchAnimais from './modules/fetchAnimais.js';
 import initDropdownMenu from './modules/dropdownMenu.js'; 
 import initFetchBitcoin from './modules/fetchBitcoin.js';
 import initFuncionamento from './modules/funcionamento.js';
@@ -26,7 +26,7 @@ const tooltip = new Tooltip('[data-tooltip]');
 tooltip.init();
 
 initMenuMobile();
-initFetchAnimais();
+fetchAnimais('../../animaisapi.json', '.numerosGrid', 'Os números não são dados reais.');
 initDropdownMenu();
 initFetchBitcoin();
 initFuncionamento()
