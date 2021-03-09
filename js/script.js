@@ -5,8 +5,8 @@ import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
 import initMenuMobile from './modules/menuMobile.js';
 import fetchAnimais from './modules/fetchAnimais.js';
+import fetchBitcoin from './modules/fetchBitcoin.js';
 import initDropdownMenu from './modules/dropdownMenu.js'; 
-import initFetchBitcoin from './modules/fetchBitcoin.js';
 import initFuncionamento from './modules/funcionamento.js';
 import initAnimacaoScroll from './modules/animacaoScroll.js';
 
@@ -26,8 +26,9 @@ const tooltip = new Tooltip('[data-tooltip]');
 tooltip.init();
 
 initMenuMobile();
-fetchAnimais('../../animaisapi.json', '.numerosGrid', 'Os números não são dados reais.');
 initDropdownMenu();
-initFetchBitcoin();
 initFuncionamento()
 initAnimacaoScroll();
+
+fetchAnimais('../../animaisapi.json', '.numerosGrid', 'Os números não são dados reais.');
+fetchBitcoin('https://blockchain.info/ticker', '.btcPreco');
