@@ -1,14 +1,20 @@
 // Animação que acontece ao rolar a página
-export default function initAnimacaoScroll()
+export default class AnimacaoScroll
 {
-  const windowMetade = window.innerHeight * 0.6;
-  const sections = document.querySelectorAll('[data-anime="scroll"]');
-
-  function animaScroll()
+  constructor(sections)
   {
-    sections.forEach((section) => {
+    this.sections = document.querySelectorAll(sections); 
+    this.windowMetade = window.innerHeight * 0.6;
+
+    this.animaScroll = this.animaScroll.bind(this);
+  }
+  
+
+  animaScroll()
+  {
+    this.sections.forEach((section) => {
       const sectionTop = section.getBoundingClientRect().top;
-      const isSectionVisible = (sectionTop - windowMetade) < 0;
+      const isSectionVisible = (sectionTop - this.windowMetade) < 0;
       if(isSectionVisible)
       {
         section.classList.add('ativo');
@@ -21,9 +27,9 @@ export default function initAnimacaoScroll()
     });
   }
 
-  if(sections.length)
+  init()
   {
-    animaScroll();  
-    window.addEventListener('scroll', animaScroll);
+    this.animaScroll();
+    window.addEventListener('scroll', this.animaScroll); 
   }
 }
