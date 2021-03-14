@@ -1,3 +1,5 @@
+import debounce from './debounce.js';
+
 // Animação que acontece ao rolar a página
 export default class AnimacaoScroll
 {
@@ -6,7 +8,7 @@ export default class AnimacaoScroll
     this.sections = document.querySelectorAll(sections); 
     this.windowMetade = window.innerHeight * 0.6;
 
-    this.checkDistance = this.checkDistance.bind(this);
+    this.checkDistance = debounce(this.checkDistance.bind(this), 50);
   }
   
   // Pega a distância de cada item em relação ao topo do site
