@@ -7,7 +7,7 @@
   <title>Animais Fantásticos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
   <script>
     document.documentElement.className += ' js';
@@ -36,7 +36,7 @@
         <li><a href="#numeros">Numeros</a></li>
         <li><a href="#contato">Contato</a></li>
         <li><a href="https://github.com/bsgabriel">Dev</a></li>
-        <li><a data-modal="abrir" href="login.html">Login →</a></li>
+        <li><a data-modal="abrir" href="login.html">Login <span class="arrowBlack"></span></a></li>
       </ul>
     </nav>
     <section class="gridSection animais" data-anime="scroll" id="animais">
@@ -214,7 +214,7 @@
 
   <section class="modalContainer" data-modal="container">
     <div class="modal">
-      <button data-modal="fechar" class="fechar">X</button>
+      <button data-modal="fechar" class="fechar"></button>
       <form action="">
         <label for="email">Email</label>
         <input type="text" for="email" id="email">
