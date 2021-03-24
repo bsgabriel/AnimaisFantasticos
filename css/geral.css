@@ -1,4 +1,12 @@
-body, h1, h2, ul, li, p, dd, dt, dl {
+body,
+h1,
+h2,
+ul,
+li,
+p,
+dd,
+dt,
+dl {
   margin: 0px;
   padding: 0px;
 }
@@ -15,7 +23,7 @@ ul {
 body {
   background: #faf6ed;
   color: #222;
-  -webkit-font-smoothing: antialiased; 
+  -webkit-font-smoothing: antialiased;
 }
 
 .gridContainer {
@@ -27,7 +35,7 @@ body {
   grid-column: 3 / 5;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  background: #FB5;
+  background: #fb5;
 }
 
 .menu ul {
@@ -42,11 +50,11 @@ body {
   margin-right: 10px;
   color: #222;
   text-decoration: none;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.875rem;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
 }
 
 .gridSection {
@@ -61,7 +69,7 @@ body {
 }
 
 .titulo {
-  font-family: 'Playfair Display SC', georgia;
+  font-family: "Playfair Display SC", georgia;
   font-size: 6rem;
   line-height: 1;
   font-weight: 400;
@@ -70,21 +78,21 @@ body {
 }
 
 .animais h2 {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   margin-bottom: 1rem;
-  color: #E54
+  color: #e54;
 }
 
 .animais h2::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 40px;
   height: 10px;
   margin-right: 10px;
-  background: #FB5;
+  background: #fb5;
 }
 
 .animais p {
@@ -110,7 +118,7 @@ body {
 }
 
 .animaisLista::-webkit-scrollbar-thumb {
-  background: #FB5;
+  background: #fb5;
   border-left: 4px solid #faf6ed;
   border-right: 4px solid #faf6ed;
 }
@@ -119,15 +127,14 @@ body {
   background: #faf6ed;
 }
 
-
 /* Propriedades da scrollbar no Firefox*/
 .animaisLista {
-  scrollbar-color: #FB5 #faf6ed;
-  scrollbar-width:18px;
+  scrollbar-color: #fb5 #faf6ed;
+  scrollbar-width: 18px;
 }
 
 .animaisDescricao {
-   grid-column: 3;
+  grid-column: 3;
 }
 
 .animaisDescricao section {
@@ -139,25 +146,25 @@ body {
 }
 
 .faqLista dt {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: bold;
   margin-top: 2rem;
-  margin-bottom: .5rem;
-  color: #E54;
+  margin-bottom: 0.5rem;
+  color: #e54;
 }
 
 .faqLista dt::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 20px;
   height: 10px;
   margin-right: 10px;
-  background: #FB5;
+  background: #fb5;
 }
 
 .faqLista dd {
   font-family: Helvetica, Arial;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   margin-left: 30px;
 }
 
@@ -175,23 +182,23 @@ body {
 }
 
 .dados li::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 20px;
   height: 10px;
   margin-right: 10px;
-  background: #FB5;
+  background: #fb5;
 }
 
 .copy {
   grid-column: 3 / 5;
   margin-bottom: 2rem;
-  background: #FB5;
+  background: #fb5;
 }
 
 .copy p {
   padding: 20px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: bold;
 }
 
@@ -200,11 +207,13 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .menu, .gridSection, .copy {
+  .menu,
+  .gridSection,
+  .copy {
     grid-column: 1;
   }
 
-  .gridSection  {
+  .gridSection {
     grid-template-columns: 100px 1fr;
     grid-gap: 10px;
   }
@@ -213,19 +222,17 @@ body {
     grid-column: 1;
   }
 
-  .faqLista, .dados, .mapa {
+  .faqLista,
+  .dados,
+  .mapa {
     grid-column: 1 / 3;
   }
 
   .gridSection h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
-  .numerosGrid {
-    grid-column: 1;
-  }
-
-  .menu{
+  .menu {
     margin-top: 0px;
   }
 
@@ -243,11 +250,11 @@ body {
 }
 
 [data-tab="content"] section.ativo.showRight {
-  animation: showRight .5s forwards;
+  animation: showRight 0.5s forwards;
 }
 
 [data-tab="content"] section.ativo.showDown {
-  animation: showDown .5s forwards;
+  animation: showDown 0.5s forwards;
 }
 
 @keyframes showRight {
@@ -272,23 +279,29 @@ body {
   }
 }
 
-
 .js [data-anime="accordion"] dd {
   display: none;
 }
 
 [data-anime="accordion"] dt::after {
-  content:'⮧';
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: url("../img/arrow-red.svg") center center no-repeat;
   margin-left: 10px;
+  transform: rotate(90deg);
+  transition: transform 0.3s;
 }
 
 [data-anime="accordion"] dt.ativo::after {
-  content:'⮥';
+  content: "";
+  transform: rotate(-90deg);
 }
 
-[data-anime="accordion"] dd.ativo{
+[data-anime="accordion"] dd.ativo {
   display: block;
-  animation: slideDown .75s forwards;
+  animation: slideDown 0.75s forwards;
 }
 
 @keyframes slideDown {
@@ -305,7 +318,7 @@ body {
 .js [data-anime="scroll"] {
   opacity: 0;
   transform: translate3d(-30, 0, 0);
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .js [data-anime="scroll"].ativo {
@@ -315,25 +328,29 @@ body {
 
 [data-semana]::after {
   display: inline-block;
-  content: '';
+  content: "";
   width: 6px;
   height: 6px;
-  background: #E54;
+  background: #e54;
   border-radius: 50%;
   margin-left: 4px;
   border: 2px solid #000;
 }
 
 [data-semana].aberto::after {
-  background: #3F4;
+  background: #3f4;
 }
 
 .btcPreco {
-  background: #3F4;
-  padding: .2rem .5rem;
+  background: #3f4;
+  padding: 0.2rem 0.5rem;
   font-weight: bold;
   border-radius: 2px;
 }
 
-
-
+.arrowBlack {
+  background: url("../img/arrow-black.svg") center center no-repeat;
+  display: inline-block;
+  width: 8px;
+  height: 10px;
+}
