@@ -1,12 +1,4 @@
-body,
-h1,
-h2,
-ul,
-li,
-p,
-dd,
-dt,
-dl {
+body, h1, h2,ul, li,p, dd, dt, dl {
   margin: 0px;
   padding: 0px;
 }
@@ -207,9 +199,7 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .menu,
-  .gridSection,
-  .copy {
+  .menu, .gridSection, .copy {
     grid-column: 1;
   }
 
@@ -222,9 +212,7 @@ body {
     grid-column: 1;
   }
 
-  .faqLista,
-  .dados,
-  .mapa {
+  .faqLista, .dados, .mapa {
     grid-column: 1 / 3;
   }
 
